@@ -15,3 +15,8 @@ variable "private_subnet_cidrs" {
   type        = list(string)
 }
 
+#TAGS
+variable "tag_name" {
+  description = "resource name"
+}
+

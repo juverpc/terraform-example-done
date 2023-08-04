@@ -13,3 +13,12 @@ variable "vpc_id" {
   type = string
 }
 
+/* variable "tag_name" {
+  type        = string
+  description = "resource name"
+}
+
+variable "tag_environment" {
+  type        = string
+  description = "environment"
+} */

@@ -7,6 +7,7 @@ module "vpc" {
 module "igw" {
   source = "../../modules/networking/igw"
   vpc_id = module.vpc.vpc_id
+  
 }
 
 module "subnet_staging" {
@@ -25,8 +26,8 @@ module "rt" {
 module "rt_association" {
   source = "../../modules/networking/route_table_association"
 
-  count = var.private_subnet_count
-  subnet_id = module.subnet_staging[count.index].id 
+  count = "${length(var.private_subnet_cidrs)}" 
+  subnet_id = "${element(module.subnet_staging.private_subnet_ids, count.index)}"
   route_table_id = module.rt.route_table_id
   private_subnet_cidrs = var.private_subnet_cidrs
 }

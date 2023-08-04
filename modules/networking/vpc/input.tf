@@ -5,6 +5,11 @@ variable "vpc_cidr" {
 }
 
 
+variable "tag_name" {
+  description = "resource name"
+  type = string
+  default = "MyVPC"
+}
 
 
 
