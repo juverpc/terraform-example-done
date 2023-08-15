@@ -39,3 +39,10 @@ module "route53" {
  
 }
 
+module "fargate" {
+  source = "../../modules/infra/fargate"
+
+  count = "${length(var.private_subnet_cidrs)}"
+  subnet_id = [element(module.subnet_staging.private_subnet_ids, count.index)]
+
+}

@@ -20,6 +20,8 @@ variable r53_name {
   description = "route53 private zone name"
 }
 
+#Fargate
+
 
 #TAGS
 variable "tag_name" {
