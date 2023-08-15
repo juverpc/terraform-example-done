@@ -15,6 +15,12 @@ variable "private_subnet_cidrs" {
   type        = list(string)
 }
 
+#Route53
+variable r53_name {
+  description = "route53 private zone name"
+}
+
+
 #TAGS
 variable "tag_name" {
   description = "resource name"

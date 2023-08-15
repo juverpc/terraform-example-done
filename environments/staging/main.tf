@@ -31,5 +31,11 @@ module "rt_association" {
   route_table_id = module.rt.route_table_id
   private_subnet_cidrs = var.private_subnet_cidrs
 }
+module "route53" {
+  source = "../../modules/infra/route53"
 
+  r53_name = var.r53_name
+  vpc_id = module.vpc.vpc_id
+ 
+}
 
