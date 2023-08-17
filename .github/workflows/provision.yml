@@ -28,4 +28,4 @@ jobs:
           terraform validate
           terraform plan 
           terraform apply -var-file=variables.tfvars -auto-approve
-          
+        #test
